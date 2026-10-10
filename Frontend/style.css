@@ -1,13 +1,63 @@
 @charset "UTF-8";
 /* CSS Document */
 body {
-    background-image: url("img/foto\ perfil.jpg");
+    background-image: url("img/foto%20perfil.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 14px;
-    color: #ff0000;
-    background-color: #f9f9f9;
+    color: #ffffff;
+    background-color: #1a1a2e;
     margin: 0;
     padding: 20px;
-    width: 100vh;
-    height: 100vw;
+    width: 100%;
+    height: 100%;
+}
+
+/* ===== Letreiro de Cards de Softwares ===== */
+.software-marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+}
+
+.marquee-track {
+    display: inline-flex;
+    gap: 20px;
+    animation: scroll-left 20s linear infinite;
+}
+
+.software-marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+.software-card {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 140px;
+    padding: 18px 30px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.software-card:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+@keyframes scroll-left {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
 }
