@@ -118,6 +118,7 @@ body {
 /* ===== Sobre mim: foto + texto ===== */
 .sobre-mim {
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
     gap: 30px;
     background: rgba(0, 0, 0, 0.45);
@@ -126,6 +127,12 @@ body {
     border-radius: 16px;
     padding: 25px;
     max-width: 900px;
+    margin: 0 auto;
+}
+
+.sobre-mim .texto {
+    text-align: left;
+    flex: 1;
 }
 
 .profile-photo {
