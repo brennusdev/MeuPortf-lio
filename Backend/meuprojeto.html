@@ -5,19 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Portfólio</title>
     <link rel="stylesheet" href="../Frontend/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container">
+<div class="grid-bg"></div>
+
+<!-- Robôzinho de boas-vindas: aparece e some após 5s ou na primeira interação -->
+<div class="bot" id="bot">
+    <div class="bot-bolha">Olá! Eu sou o B0T 👋 Bem-vindo ao portfólio!</div>
+    <div class="bot-corpo">
+        <div class="bot-antena"></div>
+        <div class="bot-cabeca">
+            <span class="bot-olho"></span>
+            <span class="bot-olho"></span>
+        </div>
+        <div class="bot-tronco">
+            <span class="bot-luz"></span>
+            <span class="bot-luz"></span>
+            <span class="bot-luz"></span>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar">
+    <span class="nav-logo">BRENNO</span>
+    <ul class="nav-links">
+        <li><a href="#topo">Início</a></li>
+        <li><a href="#apresentacao">Apresentação</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+    </ul>
+</nav>
+
+<div class="container" id="topo">
     <header class="hero">
+        <span class="hero-tag">// PORTFÓLIO PESSOAL</span>
         <h1>Brenno</h1>
-        <p class="hero-subtitulo">Explore os meus projetos e descubra o que posso oferecer para o seu próximo desafio!</p>
+        <p class="hero-subtitulo">Seja bem-vindo ao meu Portfólio Pessoal</p>
     </header>
-    <h2 class="reveal">Apresentação</h2>
+    <h2 id="apresentacao" class="reveal">Apresentação</h2>
     <section class="sobre-mim reveal">
         <img src="../Frontend/img/foto%20perfil.jpg" alt="Foto de Brenno" class="profile-photo">
         <p class="texto">Olá me chamo Brenno, Tenho 23 anos e desde dos 9 anos sempre tive interesse em tecnologia. Passava horas e horas mexendo no computador. O que me fez aprender a mexer no computador sozinho na época de LAN. Com o passar dos anos perdi um pouco a aproximação com a área, mas sempre mantive a paixão por tecnologia. Até que em 2023 trabalhei em uma empresa de telemarketing que acendeu essa paixão novamente. Hoje, Estudo programação tem 1 ano e 2 meses onde desenvolvo projetos web com foco em criar experiências intuitivas e eficientes para o dia a dia</p>
     </section>
-    <h3 class="reveal">Softwares Skills</h3>
+    <h3 id="skills" class="reveal">Softwares Skills</h3>
     <div class="software-marquee reveal">
         <div class="marquee-track">
             <div class="software-card">HTML</div>
@@ -33,7 +64,7 @@
             <div class="software-card">MySQL</div>
         </div>
     </div>
-    <h3 class="reveal">Projetos</h3>
+    <h3 id="projetos" class="reveal">Projetos</h3>
     <ul class="lista-projetos reveal">
         <li><a href="https://github.com/brennusdev" target="_blank" rel="noopener noreferrer">Projeto 1</a></li>
         <li><a href="https://github.com/brennusdev" target="_blank" rel="noopener noreferrer">Projeto 2</a></li>
