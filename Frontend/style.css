@@ -1,19 +1,89 @@
 @charset "UTF-8";
 /* CSS Document */
 body {
-    background-image: url("img/pexelss.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(180deg, #050514 0%, #0a0a2e 50%, #05051a 100%);
+    font-family: 'Rajdhani', 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
     font-size: 14px;
     color: #ffffff;
-    background-color: #1a1a2e;
     margin: 0;
     padding: 20px;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+/* ===== Fundo futurista: grade animada ===== */
+.grid-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image:
+        linear-gradient(rgba(0, 255, 255, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.07) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: grid-move 12s linear infinite;
+}
+
+@keyframes grid-move {
+    from { background-position: 0 0, 0 0; }
+    to   { background-position: 0 50px, 50px 0; }
+}
+
+/* ===== Navbar fixa ===== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 30px;
+    background: rgba(5, 5, 20, 0.75);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+}
+
+.nav-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    font-size: 18px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #e0e6ff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00ffff;
+    border-color: rgba(0, 255, 255, 0.4);
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+.container {
+    padding-top: 70px; /* espaço para a navbar fixa */
 }
 
 /* ===== Letreiro de Cards de Softwares ===== */
@@ -43,18 +113,20 @@ body {
     padding: 18px 30px;
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(0, 255, 255, 0.35);
+    box-shadow: 0 0 18px rgba(0, 255, 255, 0.15);
     border-radius: 12px;
     color: #ffffff;
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 1px;
-    transition: transform 0.3s, background 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
 .software-card:hover {
     transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
 }
 
 @keyframes scroll-left {
@@ -66,24 +138,42 @@ body {
 .hero {
     text-align: center;
     padding: 60px 20px;
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(5, 5, 20, 0.5);
     backdrop-filter: blur(6px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
     border-radius: 16px;
     margin-bottom: 30px;
 }
 
 .hero h1 {
+    font-family: 'Orbitron', sans-serif;
     font-size: 42px;
     margin: 0 0 10px;
     letter-spacing: 3px;
     text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.4);
+}
+
+.hero-tag {
+    display: inline-block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #00ffff;
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 6px 16px;
+    margin-bottom: 18px;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.25), inset 0 0 12px rgba(0, 255, 255, 0.1);
 }
 
 .hero-subtitulo {
     font-size: 18px;
     margin: 0;
     opacity: 0.9;
+    letter-spacing: 1px;
 }
 
 /* ===== Links dos projetos ===== */
@@ -121,9 +211,10 @@ body {
     flex-direction: row-reverse;
     align-items: center;
     gap: 30px;
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(5, 5, 20, 0.5);
     backdrop-filter: blur(6px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
     border-radius: 16px;
     padding: 25px;
     max-width: 900px;
@@ -160,6 +251,164 @@ body {
 .reveal.ativo {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ===== Robôzinho de boas-vindas ===== */
+.bot {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    animation: bot-entrar 0.6s ease forwards;
+}
+
+.bot.saindo {
+    animation: bot-sair 0.5s ease forwards;
+}
+
+@keyframes bot-entrar {
+    from { opacity: 0; transform: translateY(120px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bot-sair {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(120px); }
+}
+
+.bot-corpo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: bot-flutuar 2.5s ease-in-out infinite;
+    filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.5));
+}
+
+@keyframes bot-flutuar {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+}
+
+.bot-antena {
+    width: 3px;
+    height: 14px;
+    background: #00ffff;
+    position: relative;
+}
+
+.bot-antena::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: -3px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+    animation: bot-piscar-antena 1.5s infinite;
+}
+
+@keyframes bot-piscar-antena {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.3; }
+}
+
+.bot-cabeca {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 42px;
+    background: rgba(5, 5, 30, 0.9);
+    border: 2px solid #00ffff;
+    border-radius: 12px 12px 6px 6px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4), inset 0 0 10px rgba(0, 255, 255, 0.15);
+}
+
+.bot-olho {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #00ffff;
+    box-shadow: 0 0 8px #00ffff;
+    animation: bot-piscar-olho 3s infinite;
+}
+
+@keyframes bot-piscar-olho {
+    0%, 92%, 100% { transform: scaleY(1); }
+    95%           { transform: scaleY(0.1); }
+}
+
+.bot-tronco {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 30px;
+    background: rgba(5, 5, 30, 0.9);
+    border: 2px solid #00ffff;
+    border-radius: 6px 6px 12px 12px;
+    border-top: none;
+}
+
+.bot-luz {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #00ffff;
+    box-shadow: 0 0 6px #00ffff;
+}
+
+.bot-luz:nth-child(2) { animation: bot-piscar-antena 1.5s 0.3s infinite; }
+.bot-luz:nth-child(3) { animation: bot-piscar-antena 1.5s 0.6s infinite; }
+
+.bot-bolha {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #e0e6ff;
+    background: rgba(5, 5, 30, 0.9);
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    border-radius: 12px;
+    padding: 10px 14px;
+    max-width: 210px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    animation: bot-bolha-entra 0.6s 0.4s ease backwards;
+}
+
+@keyframes bot-bolha-entra {
+    from { opacity: 0; transform: scale(0.7); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* ===== Navbar em telas menores ===== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .container {
+        padding-top: 120px;
+    }
 }
 
 /* ===== Responsividade ===== */
